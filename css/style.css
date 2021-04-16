@@ -1,0 +1,587 @@
+body {
+  background-color: #fafafa;
+}
+
+/*=== header ===*/
+header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0;
+  height: 65px;
+  width: 100vw;
+  position: fixed;
+  background-color: #fff;
+  top: 0;
+  -webkit-filter: drop-shadow(0 0 5px #707070);
+          filter: drop-shadow(0 0 5px #707070);
+}
+
+@media (min-width: 1025px) {
+  header {
+    width: 230px;
+    height: 100vh;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: column;
+            flex-flow: column;
+    -webkit-filter: drop-shadow(0 0 0 rgba(111, 111, 111, 0));
+            filter: drop-shadow(0 0 0 rgba(111, 111, 111, 0));
+  }
+}
+
+header h1 {
+  margin: 0;
+}
+
+header .logoYoko {
+  height: 50px;
+  margin-left: 20px;
+}
+
+@media (min-width: 1025px) {
+  header .logoYoko {
+    display: none;
+  }
+}
+
+header .logoTate {
+  display: none;
+}
+
+@media (min-width: 1025px) {
+  header .logoTate {
+    display: block;
+    width: 100px;
+    margin-top: 2vh;
+  }
+}
+
+.drawerHidden {
+  display: none;
+}
+
+.drawerOpen {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 60px;
+  width: 60px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
+  z-index: 100;
+  cursor: pointer;
+}
+
+@media (min-width: 1025px) {
+  .drawerOpen {
+    display: none;
+  }
+}
+
+.drawerOpen span,
+.drawerOpen span::after,
+.drawerOpen span::before {
+  content: "";
+  display: block;
+  height: 3px;
+  width: 25px;
+  border-radius: 3px;
+  background-color: #000;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  position: absolute;
+}
+
+.drawerOpen span::before {
+  bottom: 8px;
+}
+
+.drawerOpen span::after {
+  top: 8px;
+}
+
+#drawerCheck:checked ~ .drawerOpen span {
+  background-color: rgba(0, 0, 0, 0);
+}
+
+#drawerCheck:checked ~ .drawerOpen span::before {
+  bottom: 0;
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+}
+
+#drawerCheck:checked ~ .drawerOpen span::after {
+  top: 0;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+
+.drawerContent {
+  width: 100%;
+  position: fixed;
+  top: 65px;
+  left: 0;
+  opacity: 0;
+  visibility: hidden;
+  background: rgba(0, 0, 0, 0.8);
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+@media (min-width: 1025px) {
+  .drawerContent {
+    opacity: 1;
+    visibility: visible;
+    position: relative;
+    top: 0;
+    background: none;
+  }
+}
+
+.drawerContent .drawerList {
+  list-style-type: none;
+  text-align: center;
+  padding: 0;
+  margin: 0;
+}
+
+@media (min-width: 1025px) {
+  .drawerContent .drawerList {
+    margin-bottom: 10vh;
+  }
+}
+
+.drawerContent .drawerList .drawerItem {
+  height: 60px;
+  border-bottom: white 1px solid;
+}
+
+@media (min-width: 1025px) {
+  .drawerContent .drawerList .drawerItem {
+    border: none;
+  }
+}
+
+.drawerContent .drawerList .drawerItem:last-child {
+  border-bottom: none;
+}
+
+@media (min-width: 1025px) {
+  .drawerContent .drawerList .drawerItem:last-child a {
+    color: #000;
+  }
+}
+
+@media (min-width: 1025px) {
+  .drawerContent .drawerList .drawerItem:last-child {
+    margin-top: 20vh;
+  }
+}
+
+.drawerContent .drawerList .drawerItem a {
+  color: #fff;
+  text-decoration: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  height: 100%;
+  font-size: 20px;
+}
+
+@media (min-width: 1025px) {
+  .drawerContent .drawerList .drawerItem a {
+    color: #777777;
+    font-size: 1em;
+  }
+}
+
+#drawerCheck:checked ~ .drawerContent {
+  opacity: 1;
+  visibility: visible;
+}
+
+/*=== /header ===*/
+/*=== main ===*/
+main {
+  margin-top: 65px;
+}
+
+@media (min-width: 1025px) {
+  main {
+    margin-top: 0;
+    margin-left: 230px;
+  }
+}
+
+.mainImg {
+  width: 100%;
+}
+
+.mainImg img {
+  width: 100%;
+}
+
+.noticeContainer {
+  text-align: center;
+  background-color: #e9e9e9;
+  margin: 10px 10vw;
+  padding: 1vh 1vw;
+  border-radius: 2vw;
+}
+
+@media (min-width: 1025px) {
+  .noticeContainer {
+    border-radius: 1vw;
+  }
+}
+
+.noticeContainer .noticeP {
+  color: #777777;
+}
+
+.noticeContainer .noticeButton {
+  background-color: #ff7cff;
+  padding: 3px 0;
+  width: 150px;
+  border-radius: 20px;
+  margin: 0 auto;
+  cursor: pointer;
+}
+
+.noticeContainer .noticeButton:hover {
+  background-color: #ff8fff;
+}
+
+.noticeContainer .noticeButton a {
+  text-decoration: none;
+  color: #fff;
+}
+
+h2 {
+  text-align: center;
+  font-size: 20px;
+  border-bottom: 5px solid #ff7cff;
+  width: 120px;
+  margin: 0 auto;
+  font-weight: normal;
+  padding: 2px;
+}
+
+.shopContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column;
+          flex-flow: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 20px 10vw;
+}
+
+@media (min-width: 1025px) {
+  .shopContainer {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: row;
+            flex-flow: row;
+  }
+}
+
+@media (min-width: 1025px) {
+  .shopContainer .shopItem {
+    margin: 0 3vw;
+  }
+}
+
+.shopContainer .shopItem img {
+  width: 50vw;
+}
+
+@media (min-width: 1025px) {
+  .shopContainer .shopItem img {
+    width: 250px;
+  }
+}
+
+.shopContainer .shopItem p {
+  text-align: center;
+}
+
+.annaiContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+@media (min-width: 1025px) {
+  .annaiContainer {
+    margin: 20px 10vw 10px 10vw;
+  }
+}
+
+.annaiContainer .flex1 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column;
+          flex-flow: column;
+}
+
+@media (min-width: 1025px) {
+  .annaiContainer .flex1 {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: row;
+            flex-flow: row;
+  }
+}
+
+.annaiContainer .flex1 .annaiImg {
+  width: 100%;
+}
+
+@media (min-width: 1025px) {
+  .annaiContainer .flex1 .annaiImg {
+    width: 30vw;
+  }
+}
+
+.annaiContainer .flex1 .annaiImg img {
+  width: 100%;
+}
+
+.annaiContainer .flex1 .setsumeiContainer {
+  text-align: center;
+}
+
+.annaiContainer .flex1 .setsumeiContainer em {
+  font-size: 20px;
+  color: #777777;
+}
+
+@media (min-width: 1025px) {
+  .annaiContainer .flex1 .setsumeiContainer {
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: column;
+            flex-flow: column;
+  }
+}
+
+.annaiContainer .addressContainer {
+  width: 45%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column;
+          flex-flow: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.annaiContainer .addressContainer p {
+  margin: 2px;
+}
+
+.annaiContainer .gmapContainer {
+  width: 45%;
+  height: 30vh;
+}
+
+.annaiContainer .gmapContainer iframe {
+  width: 100%;
+  height: 100%;
+}
+
+.noticeList {
+  margin: 10px 10vw;
+  padding: 0px 5vw;
+  background: #e9e9e9;
+  border-radius: 2vw;
+}
+
+@media (min-width: 1025px) {
+  .noticeList {
+    border-radius: 1vw;
+  }
+}
+
+.noticeList li {
+  list-style-type: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row;
+          flex-flow: row;
+}
+
+.noticeList li:first-child {
+  border-bottom: 1px solid #c5c5c5;
+}
+
+.noticeList li p {
+  margin: 5px 0;
+  font-size: 14px;
+  color: #777777;
+}
+
+.noticeList li p:first-child {
+  margin-right: 10px;
+}
+
+/*=== /main ===*/
+/*=== footer ===*/
+footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column;
+          flex-flow: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding-bottom: 2vh;
+  background-color: #fff;
+}
+
+@media (min-width: 1025px) {
+  footer {
+    margin-left: 230px;
+  }
+}
+
+footer .footerNav {
+  height: 100px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+@media (min-width: 1025px) {
+  footer .footerNav {
+    -webkit-box-pack: left;
+        -ms-flex-pack: left;
+            justify-content: left;
+  }
+}
+
+footer .footerNav .footerLogoTate {
+  height: 70px;
+}
+
+@media (min-width: 1025px) {
+  footer .footerNav .footerLogoTate {
+    display: none;
+  }
+}
+
+footer .footerNav .footerLogoYoko {
+  display: none;
+}
+
+@media (min-width: 1025px) {
+  footer .footerNav .footerLogoYoko {
+    display: block;
+    height: 50px;
+    margin: 0 2vw;
+  }
+}
+
+footer .footerNav .footerList {
+  list-style-type: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 0;
+  margin: 0;
+}
+
+footer .footerNav .footerItem {
+  margin-left: 20px;
+  font-size: 14px;
+}
+
+footer .footerNav .footerItem a {
+  text-decoration: none;
+  color: #838383;
+}
+
+footer .copyContainer {
+  text-align: center;
+  margin-top: -20px;
+}
+
+@media (min-width: 1025px) {
+  footer .copyContainer {
+    text-align: right;
+    margin-top: -40px;
+    margin-right: 5vw;
+  }
+}
+
+footer .copyContainer .copy {
+  color: #c7c7c7;
+  font-size: 12px;
+  margin: 0;
+}
+
+/*=== /footer ===*/
+/*# sourceMappingURL=style.css.map */
